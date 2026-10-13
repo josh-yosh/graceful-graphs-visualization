@@ -18,31 +18,22 @@ find_package(imgui CONFIG REQUIRED)
 # ==========================================
 # 3. Define Targets (Your Libraries & Executables)
 # ==========================================
-# First, create your Point library (assuming Point.cpp/h are in your src folder)
-# add_library(
-# )
-
-# Next, create your main application executable
-add_executable(my_executable 
-    src/Graph.cpp
-    src/Graph.h
+# Create the main application executable
+add_executable(my_executable
+    src/Algorithm/main.cpp
+    src/Graph/Graph.cpp
+    src/Graph/Graph.h
 )
 
 # ==========================================
 # 4. Target Configuration & Linking
 # ==========================================
-# Tell CMake that anyone linking to PointLib needs to know its directory
-target_include_directories(PointLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(my_executable PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
-# Link everything to your main executable 
-# (Notice we use 'my_executable' consistently here)
-
-target_link_libraries(PointLib PUBLIC
+target_link_libraries(my_executable PRIVATE
     glfw
     glad::glad
     imgui::imgui
 )
-
-# target_link_libraries(my_executable PRIVATE 
-#     
-# )
