@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/joshuayoshioka/repos/school/Math-Research/graceful-graphs-visualization",
-      "program": "/Users/joshuayoshioka/repos/school/Math-Research/graceful-graphs-visualization/build/Debug/outDebug"
+      "cwd": "${workspaceFolder}/cpp",
+      "program": "${workspaceFolder}/cpp/build/Debug/outDebug"
     }
   ]
 }
